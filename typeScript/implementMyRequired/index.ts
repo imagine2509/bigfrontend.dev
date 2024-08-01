@@ -9,9 +9,8 @@ type MyRequired<T> ={ // initialize generic type of object
     /** then we create a type for key in object which is
      * a key of Foo with removed ? using - mapping modifier
      * then we create a type for value which is
-     * a same type from passed type (Foo in that case)
-     * but pass NonNullable to exclude null and undefined*/
-    [P in keyof T]-?: NonNullable<T[P]>
+     * a same type from passed type (Foo in that case) */
+    [P in keyof T]-?: T[P]
 }
 
 const a: MyRequired<Foo> = {}
